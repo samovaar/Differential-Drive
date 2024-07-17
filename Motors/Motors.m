@@ -3,20 +3,28 @@ classdef Motors
     %   Detailed explanation goes here
     
     properties
-        Property1
-    end
-    
-    methods
-        function obj = Motors(inputArg1,inputArg2)
-            %MOTORS Construct an instance of this class
-            %   Detailed explanation goes here
-            obj.Property1 = inputArg1 + inputArg2;
-        end
+        % Motor Parameters
+        GearRatio
+
+        % Wheel Parameters
+        WheelRadius_mm
+
+        % Motor Driver Parameters
+        STBY
         
-        function outputArg = method1(obj,inputArg)
-            %METHOD1 Summary of this method goes here
-            %   Detailed explanation goes here
-            outputArg = obj.Property1 + inputArg;
+        % Encoder Parameters
+        CountsPerRev
+        
+        DIRECTION
+    end
+
+    properties (Dependent)
+        PPR
+    end
+
+    methods
+        function ppr = get.PPR(obj)
+            ppr = obj.CountsPerRev * obj.GearRatio;
         end
     end
 end
