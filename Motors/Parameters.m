@@ -8,8 +8,10 @@ Wheel.WheelRadius_mm = 14;
 MotorDriver = struct;
 MotorDriver.STBY_ON = 1;
 MotorDriver.STBY_OFF = 0;
-MotorDriver.AIN = [0 1];
-MotorDriver.BIN = [0 1];
+MotorDriver.AIN.FORWARD = [0 1];
+MotorDriver.AIN.REVERSE = [1 0];
+MotorDriver.BIN.FORWARD = [0 1];
+MotorDriver.BIN.REVERSE = [1 0];
 
 
 Encoder = struct;
