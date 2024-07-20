@@ -18,3 +18,5 @@ Encoder.RightChannelA = 26;
 Encoder.RightChannelB = 25;
 Encoder.LeftChannelA = 0;
 Encoder.LeftChannelB = 0;
+Encoder.DesiredPosition = 183;
+
