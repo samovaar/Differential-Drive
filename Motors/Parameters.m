@@ -20,7 +20,7 @@ Encoder = struct;
 Encoder.CountsPerRev = 12;
 Encoder.RightChannelA = 26;
 Encoder.RightChannelB = 25;
-Encoder.LeftChannelA = 0;
-Encoder.LeftChannelB = 0;
+Encoder.LeftChannelA = 18;
+Encoder.LeftChannelB = 5;
 Encoder.DesiredPosition = 183;
 
