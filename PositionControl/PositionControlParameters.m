@@ -1,8 +1,6 @@
 Motor = struct;
 Motor.GearRatio = 15.25;
 Motor.GearRatioTest = 51.45;
-Motor.DesiredSpeed_rps = 1;
-Motor.DesiredSpeed_rpm = 120;
 Motor.DesiredPosition = 1*617;
 
 
