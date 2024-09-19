@@ -1,7 +1,7 @@
 Motor = struct;
 Motor.GearRatio = 15.25;
 Motor.GearRatioTest = 51.45;
-Motor.DesiredVelocity_rpm = 1;
+Motor.DesiredVelocity_rpm = 60;
 
 
 Encoder = struct;
@@ -19,7 +19,7 @@ MotorDriver.STBY.Off = 0;
 MotorDriver.PWM.PinA = 23; 
 MotorDriver.AIN.Pin1 = 17;
 MotorDriver.AIN.Pin2 = 22;
-aMotorDriver.AIN.Forward = [0 1];
+MotorDriver.AIN.Forward = [0 1];
 MotorDriver.AIN.Reverse = [1 0];
 MotorDriver.BIN.Forwared = [0 1];
 MotorDriver.BIN.Reverse = [1 0];
@@ -30,10 +30,10 @@ Wheel.PointerRadius_cm = 2;
 
 
 
-Controller.Parameters.P = 0.1;
-Controller.Parameters.I = 0.08;
-Controller.Parameters.D = 0.2;
-Controller.Parameters.Filter = 0.1;
+Controller.Parameters.P = 0.45;
+Controller.Parameters.I = 0;
+Controller.Parameters.D = 0;
+Controller.Parameters.Filter = 100;
 
 
 %% Notes
