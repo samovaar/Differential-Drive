@@ -10,27 +10,31 @@ end
 
 function schema = createMacro(~)
     schema = sl_action_schema;
-    schema.label = 'Create Macro';
-    schema.statustip = 'Create Macro';
-    schema.accelerator = 'Ctrl+Shift+F';
+    schema.label = 'Color Blocks';
+    schema.statustip = 'Macros';
+    schema.accelerator = 'Alt+Shift+F';
     schema.callback = @createMacrokb;
 end
 
 
-
+% Run sl_refresh_customizations in MATLAB cmd line after editing this file
 function createMacrokb(~)
+    % Searching for inport and outport blocks in current model subsystem 
     inportBlocks = Simulink.findBlocks(gcs, 'BlockType', 'Inport');
     outportBlocks = Simulink.findBlocks(gcs, 'BlockType', 'Outport');
+    constantBlocks = Simulink.findBlocks(gcs, 'BlockType', 'Constant');
 
-    inportNames = getfullname(inportBlocks);
-    ouportNames = getfullname(outportBlocks);
-    
-    for i = 1 : length(inportNames)
-        set_param(inportNames{i}, 'BackgroundColor', 'Yellow');
+    for i = 1 : length(inportBlocks)
+        set_param(inportBlocks(i), 'BackgroundColor', 'Yellow');
     end
 
-    for i = 1 : length(ouportNames)
-        set_param(outportBlocks{i}, 'BackgroundColor', 'Magenta');
+    for i = 1 : length(outportBlocks)
+        set_param(outportBlocks(i), 'BackgroundColor', 'Magenta');
     end
     
+    for i = 1 : length(constantBlocks)
+        set_param(constantBlocks(i), 'BackgroundColor', 'Green');
+    end 
+    
+    clear i inportBlocks outportBlocks constantBlocks
 end
