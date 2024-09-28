@@ -1,9 +1,16 @@
-PWM_values = [30 60 90 120 150 180 210 240]; % x-asis
-RPM_values = [38 107 175 252 330 413 500 590];   % y-axis
+% Y-axis
+RPM_values = [0 0 0 0 0 15.5 27.1 39.4 53.3 64.6 75.8 85.6 100.2 110.4 123.5 135.5 147.7 160.5 170.9 185.3 194.4 ...
+              211.7 224.5 237.3 251 264.1 277.3 289.8 300.5 310.4 324.5 337 350.6 364.5 383.6 396.9 414.7 434 446 ...
+              471.3 490 502.7 520.4 535.9 552 566.9 582.4 594.6 608.8 623.7 637.3 652.1]; 
+
+
+% X-axis
+PWM_values = 0: 5: 255;   
 
 
 plot(PWM_values, RPM_values);
 grid on;
-xlabel("Duty Cycle");
+grid minor;
+xlabel("PWM");
 ylabel("Motor RPM");
-title("RPM vs Duty Cycle Curve");
+title("RPM vs PWM 0-255");
