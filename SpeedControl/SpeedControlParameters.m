@@ -1,7 +1,7 @@
 Motor = struct;
 Motor.GearRatio = 15.25;
 Motor.GearRatioTest = 51.45;
-Motor.DesiredVelocity_rpm = 60;
+Motor.DesiredVelocity_rpm = 120;
 
 
 Encoder = struct;
