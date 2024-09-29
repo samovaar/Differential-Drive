@@ -1,15 +1,18 @@
 function sl_customization(cm)
 % Add Items to Model editor menus
-% Link: https://www.mathworks.com/help/simulink/ug/adding-items-to-model-editor-menus.html    
+% Link: https://www.mathworks.com/help/simulink/ug/adding-items-to-model-editor-menus.html
+% Run sl_refresh_customizations in MATLAB cmd line after editing this file
+
+    % Register custom menu function
     cm.addCustomMenuFcn('Simulink:ToolsMenu', @getMyMenuItems);
 end
 
-
+% Define custom menu function
 function schemaFcns = getMyMenuItems(~)
     schemaFcns = {@createMacro};
 end  
 
-
+% Define schema function for keyboard shortcut to color blocks
 function schema = createMacro(~)
     schema = sl_action_schema;
     schema.label = 'Color Blocks';
@@ -19,9 +22,9 @@ function schema = createMacro(~)
 end
 
 
-% Run sl_refresh_customizations in MATLAB cmd line after editing this file
+
 function createMacrokb(~)
-    % Searching for inport and outport blocks in current model subsystem 
+    % Searching for inport, outport, and constant blocks in current model subsystem 
     inportBlocks = Simulink.findBlocks(gcs, 'BlockType', 'Inport');
     outportBlocks = Simulink.findBlocks(gcs, 'BlockType', 'Outport');
     constantBlocks = Simulink.findBlocks(gcs, 'BlockType', 'Constant');
