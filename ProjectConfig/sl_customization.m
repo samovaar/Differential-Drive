@@ -1,4 +1,6 @@
 function sl_customization(cm)
+% Add Items to Model editor menus
+% Link: https://www.mathworks.com/help/simulink/ug/adding-items-to-model-editor-menus.html    
     cm.addCustomMenuFcn('Simulink:ToolsMenu', @getMyMenuItems);
 end
 
