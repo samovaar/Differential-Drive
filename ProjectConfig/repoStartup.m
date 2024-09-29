@@ -4,7 +4,9 @@ ProjectConfig.Repo = gitrepo(ProjectConfig.repoPath);
 
 
 % Run following scripts
-%PositionControlParameters;
+% PositionControlParameters;
+SpeedControlParameters;
+
 
 disp("~~~~~~~~~~~~~~~~~~~~~~~~~~");
 disp("Projet files loaded")
